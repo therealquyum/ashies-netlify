@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- MOBILE FIX (VERY IMPORTANT) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- WHATSAPP / SOCIAL PREVIEW -->
+  <meta property="og:title" content="Ashie's Royale Collections">
+  <meta property="og:description" content="Earrings • Necklaces • Anklets • Hair • Beauty that gives you visibility">
+  <meta property="og:image" content="https://ashies-c.netlify.app/images/preview.jpg">
+  <meta property="og:url" content="https://ashies-c.netlify.app">
+  <meta property="og:type" content="website">
+
+  <title>Ashie's Royale Collections</title>
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100svh;
+      font-family: 'Poppins', sans-serif;
+      background-image: url("images/owner2.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top center;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 60px;
+    }
+
+    /* SOCIAL ICON BAR */
+    .social-bar {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 18px;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(6px);
+      border-radius: 30px;
+      z-index: 10;
+    }
+
+    .social-bar a {
+      color: #FAFAFA;
+      font-size: 18px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-bar a:hover {
+      transform: scale(1.2);
+      color: #D4AF37;
+    }
+
+    /* INFO CARD */
+    .overlay {
+      width: calc(100% - 40px);
+      max-width: 360px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(5px);
+      padding: 45px 35px;
+      border-radius: 24px;
+      text-align: center;
+      color: #FAFAFA;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .brand-line {
+      width: 60px;
+      height: 3px;
+      background: #D4AF37;
+      margin: 12px auto 18px;
+      border-radius: 5px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      color: #EDEDED;
+    }
+
+    .btn {
+      padding: 14px 34px;
+      background: linear-gradient(135deg, #D4AF37, #F3C1CC);
+      color: #1C1C1C;
+      text-decoration: none;
+      border-radius: 35px;
+      font-size: 16px;
+      font-weight: 500;
+      display: inline-block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(212, 175, 55, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SOCIAL LINKS -->
+  <div class="social-bar">
+    <a href="https://wa.me/2347034762934" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://facebook.com/yourpage" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com/therealquyum" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com/@therealquyum" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://twitter.com/therealquyum" target="_blank"><i class="fab fa-x-twitter"></i></a>
+  </div>
+
+  <!-- INFO CARD -->
+  <div class="overlay">
+    <h1>Ashie's Royale Collections</h1>
+    <div class="brand-line"></div>
+
+    <p>
+      We sell beautiful earrings, necklaces, anklets and accessories,
+      and we also offer professional hair styling — beauty that gives you visibility.
+    </p>
+
+    <a class="btn" href="https://wa.me/2347034762934" target="_blank">
+      Chat with us on WhatsApp
+    </a>
+  </div>
+
+</body>
+</html>
