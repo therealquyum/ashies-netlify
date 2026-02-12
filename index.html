@@ -76,6 +76,7 @@
   align-items:center;
   text-align:center;
   color:white;
+     
 }
 
 .hero-overlay{
@@ -91,16 +92,20 @@
 .hero p{
   color:rgb(0, 132, 255);
   /* text-shadow:3px 3px 2px white; */
+     font-weight:700;
+     border-top:2px solid green;
+     border-bottom:2px solid green;
 }
 
 .hero button{
-  padding:12px 25px;
+  padding:25px 25px;
   border:none;
   background:#25D366;
   color:white;
   border-radius:25px;
   cursor:pointer;
-  font-size:16px;
+  font-size:1.5rem;
+     font-weight:700;
 }
 
 /* PRODUCTS */
@@ -111,8 +116,10 @@
 
 .products{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(3, 1fr);
+  gap:10px;
+     justify-content:center;
+    /* align-items:start;*/
   margin-top:30px;
 }
 
@@ -130,7 +137,13 @@
 
 .card h3{
   margin:10px 0 5px;
+     font-size:0.8rem;
 }
+     
+     .card button{
+          border:2px solid green;
+          border-radius:8px;
+     }
 
 .price{
   color:#444;
@@ -148,10 +161,28 @@
 }
 h2{
   color:blue;
-  font-size: 2rem;
+  font-size: 1rem;
   background-color: aliceblue;
   border-radius: 16px ;
 }
+     li{
+          text-align:left;
+          font-size:0.8rem;
+     }
+     .button-group{
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          gap:10px;
+     }
+     .service-list-box{
+          display:flex;
+     }
+     
+     .hair-section p{
+          color:white;
+     }
+     
 </style>
 </head>
 
@@ -169,12 +200,26 @@ h2{
 <div class="hero">
   <div class="hero-overlay">
     <h1>Ashie's Royale Collection.</h1>
+       <h2>Our Services is here listed</h2>
+       <div class="service-list-box">
+       <ul>
+            <li>Beautiful earrings</li>
+            
+            <li>Necklaces</li>
+            <li>Anklets</li>
+            </ul>
+                 
+            <ul>
+            <li>Bracelets</li>
+            <li>Rings</li>
+            <li>Hair Accessories (combs, creams. etc.)</li>
+       </ul>
+       </div>
     <p>
-      We sell beautiful earrings, necklaces, anklets and accessories,
-      and we also offer professional hair styling — beauty that gives you visibility.
+      we also offer professional hair styling — beauty that gives you visibility.
     </p>
-
-    <button onclick="scrollToProducts()">Shop Now</button> <button>Chat on WhatsApp</button>
+       <div class="button-group">
+    <button onclick="scrollToProducts()">Shop Now  <i class="fa-solid fa-cart-shopping" ></i></button> <button onclick="window.location.href='https://wa.me/2347034762934'"> <i class="fa-brands fa-whatsapp"></i></button></div>
   </div>
 </div>
 
@@ -189,9 +234,13 @@ h2{
       <img src="images/p3.webp">
       <h3>Gold Earrings</h3>
       <p class="price">₦5,000</p>
-      <a href="https://wa.me/234XXXXXXXXXX?text=Hello%20I%20want%20to%20order%20Gold%20Earrings%20for%20₦5000">
+<button onclick="orderProduct('Sliver Anklet', '4000')">
+Order Now
+</button>
+         <!--
+      <a href="https://wa.me/2347034762934?text=Hello%20I%20want%20to%20order%20Gold%20Earrings%20for%20₦5000">
         Order Now
-      </a>
+      </a>-->
     </div>
 
     <!-- PRODUCT 2 -->
@@ -199,9 +248,13 @@ h2{
       <img src="images/p2.webp">
       <h3>Butterfly Necklace</h3>
       <p class="price">₦8,000</p>
-      <a href="https://wa.me/234XXXXXXXXXX?text=Hello%20I%20want%20to%20order%20Luxury%20Necklace%20for%20₦8000">
+<button onclick="orderProduct('Sliver Anklet', '4000')">
+Order Now
+</button>
+         
+         <!-- <a href="https://wa.me/2347034762934?text=Hello%20I%20want%20to%20order%20Luxury%20Necklace%20for%20₦8000">
         Order Now
-      </a>
+      </a>-->
     </div>
 
     <!-- PRODUCT 3 -->
@@ -209,22 +262,36 @@ h2{
       <img src="images/p1.webp">
       <h3>Silver Anklet</h3>
       <p class="price">₦4,000</p>
-      <a href="https://wa.me/234XXXXXXXXXX?text=Hello%20I%20want%20to%20order%20Silver%20Anklet%20for%20₦4000">
+         <button onclick="orderProduct('Sliver Anklet', '4000')">
+Order Now
+</button>
+         <!-- <a href="https://wa.me/2347034762934?text=Hello%20I%20want%20to%20order%20Silver%20Anklet%20for%20₦4000">
         Order Now
-      </a>
+      </a>-->
     </div>
 
   </div>
 </div>
+     
+     <script>
+function orderProduct(name, price){
+  let message = `Hello, I want to order ${name} for ₦${price}`;
+  let phone = "2347034762934";
+  let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+}
+</script>
 
 <!-- HAIR BOOKING -->
 <div class="section">
+     <div class="hair-section">
   <h2>Hair Services</h2>
   <p>Professional hair styling & braiding available.</p>
 
   <a href="https://wa.me/234XXXXXXXXXX?text=Hello%20I%20want%20to%20book%20a%20hair%20appointment.%20Preferred%20date:%20_____%20Preferred%20time:%20_____">
     Book Appointment
   </a>
+          </div>
 </div>
 
 <script>
@@ -232,6 +299,7 @@ function scrollToProducts(){
   document.getElementById("products").scrollIntoView({behavior:"smooth"});
 }
 </script>
+     
 
 </body>
 </html>
