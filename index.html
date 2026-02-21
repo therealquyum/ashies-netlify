@@ -183,6 +183,125 @@ h2{
           color:white;
      }
      
+     
+     
+     
+     .collection {
+  margin: 30px 0;
+}
+
+.collection h2 {
+  margin-left: 15px;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 15px;
+  scroll-behavior: smooth;
+}
+
+.slider::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+.product {
+  min-width: 160px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.product img {
+  width: 100%;
+  border-radius: 8px;
+}
+     
+     
+     
+     
+.main-collections {
+  margin: 40px 0;
+}
+
+.main-collections h2 {
+  margin-left: 15px;
+}
+
+.collection-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 15px;
+  scroll-behavior: smooth;
+}
+
+.collection-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.collection-card {
+  min-width: 180px;
+  text-decoration: none;
+  color: black;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.collection-card:hover {
+  transform: scale(1.05);
+}
+
+.collection-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.collection-card h3 {
+  padding: 10px;
+  text-align: center;
+}
+     
+     
+     
+     .product-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 15px;
+  scroll-behavior: smooth;
+}
+
+.product-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.product-card {
+  min-width: 160px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  flex-shrink: 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+     
+
+     
+     
 </style>
 </head>
 
@@ -222,6 +341,192 @@ h2{
     <button onclick="scrollToProducts()">Shop Now  <i class="fa-solid fa-cart-shopping" ></i></button> <button onclick="window.location.href='https://wa.me/2347034762934'"> <i class="fa-brands fa-whatsapp"></i></button></div>
   </div>
 </div>
+     
+     
+     <section class="main-collections">
+  <div class="collection-card" onclick="showCollection('earrings')">
+    <h3>Earrings</h3>
+  </div>
+
+  <div class="collection-card" onclick="showCollection('necklace')">
+    <h3>Necklace</h3>
+  </div>
+
+  <div class="collection-card" onclick="showCollection('rings')">
+    <h3>Rings</h3>
+  </div>
+</section>
+
+<section id="products-section" class="product-slider">
+</section>
+     
+     <script>  
+     
+function showCollection(category) {
+  const section = document.getElementById("products-section");
+  section.innerHTML = "";
+
+  products[category].forEach(item => {
+    section.innerHTML += `
+      <div class="product-card">
+        <img src="${item.image}">
+        <p>${item.name}</p>
+        <a href="https://wa.me/234XXXXXXXXXX?text=Hello%20I%20want%20to%20buy%20${item.name}">
+          Order
+        </a>
+      </div>
+    `;
+  });
+}
+     
+     </script> 
+     
+     <!--
+     
+     <section class="main-collections">
+  <h2>Shop Collections</h2>
+
+  <div class="collection-slider">
+
+    <a href="earrings.html" class="collection-card">
+      <img src="images/earrings.jpg" alt="Earrings">
+      <h3>Earrings</h3>
+    </a>
+
+    <a href="necklace.html" class="collection-card">
+      <img src="images/necklace.jpg" alt="Necklace">
+      <h3>Necklaces</h3>
+    </a>
+
+    <a href="rings.html" class="collection-card">
+      <img src="images/rings.jpg" alt="Rings">
+      <h3>Rings</h3>
+    </a>
+
+    <a href="bracelets.html" class="collection-card">
+      <img src="images/bracelet.jpg" alt="Bracelets">
+      <h3>Bracelets</h3>
+    </a>
+
+  </div>
+</section>
+     
+     
+     <!--
+     <section class="collection">
+  <h2>Earrings</h2>
+
+  <div class="slider">
+    <div class="product">
+      <img src="earring1.jpg" alt="Gold Drop Earring">
+      <p>Gold Drop Earring</p>
+      <a href="https://wa.me/234XXXXXXXXXX?text=Hello,%20I%20want%20to%20buy%20Gold%20Drop%20Earring">
+        Order on WhatsApp
+      </a>
+    </div>
+
+    <div class="product">
+      <img src="earring2.jpg" alt="Silver Hoop">
+      <p>Silver Hoop</p>
+      <a href="https://wa.me/234XXXXXXXXXX?text=Hello,%20I%20want%20to%20buy%20Silver%20Hoop">
+        Order on WhatsApp
+      </a>
+    </div>
+
+       
+
+    <div class="product">
+      <img src="earring2.jpg" alt="Silver Hoop">
+      <p>Silver Hoop</p>
+      <a href="https://wa.me/234XXXXXXXXXX?text=Hello,%20I%20want%20to%20buy%20Silver%20Hoop">
+        Order on WhatsApp
+      </a>
+    </div>
+
+
+    <div class="product">
+      <img src="earring2.jpg" alt="Silver Hoop">
+      <p>Silver Hoop</p>
+      <a href="https://wa.me/234XXXXXXXXXX?text=Hello,%20I%20want%20to%20buy%20Silver%20Hoop">
+        Order on WhatsApp
+      </a>
+    </div>
+
+       
+
+    <div class="product">
+      <img src="earring2.jpg" alt="Silver Hoop">
+      <p>Silver Hoop</p>
+      <a href="https://wa.me/234XXXXXXXXXX?text=Hello,%20I%20want%20to%20buy%20Silver%20Hoop">
+        Order on WhatsApp
+      </a>
+    </div>
+
+       
+  </div>
+</section>
+     
+     
+     
+     
+     
+      <section class="collection">
+  <h2>Earrings</h2>
+
+  <div class="slider">
+    <div class="product">
+      <img src="earring1.jpg" alt="Gold Drop Earring">
+      <p>Gold Drop Earring</p>
+      <a href="https://wa.me/234XXXXXXXXXX?text=Hello,%20I%20want%20to%20buy%20Gold%20Drop%20Earring">
+        Order on WhatsApp
+      </a>
+    </div>
+
+    <div class="product">
+      <img src="earring2.jpg" alt="Silver Hoop">
+      <p>Silver Hoop</p>
+      <a href="https://wa.me/234XXXXXXXXXX?text=Hello,%20I%20want%20to%20buy%20Silver%20Hoop">
+        Order on WhatsApp
+      </a>
+    </div>
+
+       
+
+    <div class="product">
+      <img src="earring2.jpg" alt="Silver Hoop">
+      <p>Silver Hoop</p>
+      <a href="https://wa.me/234XXXXXXXXXX?text=Hello,%20I%20want%20to%20buy%20Silver%20Hoop">
+        Order on WhatsApp
+      </a>
+    </div>
+
+
+    <div class="product">
+      <img src="earring2.jpg" alt="Silver Hoop">
+      <p>Silver Hoop</p>
+      <a href="https://wa.me/234XXXXXXXXXX?text=Hello,%20I%20want%20to%20buy%20Silver%20Hoop">
+        Order on WhatsApp
+      </a>
+    </div>
+
+       
+
+    <div class="product">
+      <img src="earring2.jpg" alt="Silver Hoop">
+      <p>Silver Hoop</p>
+      <a href="https://wa.me/234XXXXXXXXXX?text=Hello,%20I%20want%20to%20buy%20Silver%20Hoop">
+        Order on WhatsApp
+      </a>
+    </div>
+
+       
+  </div>
+</section>
+     
+     
+     
+     -- >
+     
 
 <!-- PRODUCTS -->
 <div class="section" id="products">
@@ -269,6 +574,119 @@ Order Now
         Order Now
       </a>-->
     </div>
+
+       
+       
+       
+       
+        <!-- PRODUCT 3 -->
+    <div class="card">
+      <img src="images/p1.webp">
+      <h3>Silver Anklet</h3>
+      <p class="price">₦4,000</p>
+         <button onclick="orderProduct('Sliver Anklet', '4000')">
+Order Now
+</button>
+         <!-- <a href="https://wa.me/2347034762934?text=Hello%20I%20want%20to%20order%20Silver%20Anklet%20for%20₦4000">
+        Order Now
+      </a>-->
+    </div>
+       
+       
+       
+        <!-- PRODUCT 3 -->
+    <div class="card">
+      <img src="images/p1.webp">
+      <h3>Silver Anklet</h3>
+      <p class="price">₦4,000</p>
+         <button onclick="orderProduct('Sliver Anklet', '4000')">
+Order Now
+</button>
+         <!-- <a href="https://wa.me/2347034762934?text=Hello%20I%20want%20to%20order%20Silver%20Anklet%20for%20₦4000">
+        Order Now
+      </a>-->
+    </div>
+
+       
+       
+        <!-- PRODUCT 3 -->
+    <div class="card">
+      <img src="images/p1.webp">
+      <h3>Silver Anklet</h3>
+      <p class="price">₦4,000</p>
+         <button onclick="orderProduct('Sliver Anklet', '4000')">
+Order Now
+</button>
+         <!-- <a href="https://wa.me/2347034762934?text=Hello%20I%20want%20to%20order%20Silver%20Anklet%20for%20₦4000">
+        Order Now
+      </a>-->
+    </div>
+
+       
+       
+        <!-- PRODUCT 3 -->
+    <div class="card">
+      <img src="images/p1.webp">
+      <h3>Silver Anklet</h3>
+      <p class="price">₦4,000</p>
+         <button onclick="orderProduct('Sliver Anklet', '4000')">
+Order Now
+</button>
+         <!-- <a href="https://wa.me/2347034762934?text=Hello%20I%20want%20to%20order%20Silver%20Anklet%20for%20₦4000">
+        Order Now
+      </a>-->
+    </div>
+
+       
+       
+       
+        <!-- PRODUCT 3 -->
+    <div class="card">
+      <img src="images/p1.webp">
+      <h3>Silver Anklet</h3>
+      <p class="price">₦4,000</p>
+         <button onclick="orderProduct('Sliver Anklet', '4000')">
+Order Now
+</button>
+         <!-- <a href="https://wa.me/2347034762934?text=Hello%20I%20want%20to%20order%20Silver%20Anklet%20for%20₦4000">
+        Order Now
+      </a>-->
+    </div>
+
+       
+       
+       
+        <!-- PRODUCT 3 -->
+    <div class="card">
+      <img src="images/p1.webp">
+      <h3>Silver Anklet</h3>
+      <p class="price">₦4,000</p>
+         <button onclick="orderProduct('Sliver Anklet', '4000')">
+Order Now
+</button>
+         <!-- <a href="https://wa.me/2347034762934?text=Hello%20I%20want%20to%20order%20Silver%20Anklet%20for%20₦4000">
+        Order Now
+      </a>-->
+    </div>
+
+       
+ <!-- PRODUCT 3 -->
+    <div class="card">
+      <img src="images/p1.webp">
+      <h3>Silver Anklet</h3>
+      <p class="price">₦4,000</p>
+         <button onclick="orderProduct('Sliver Anklet', '4000')">
+Order Now
+</button>
+         <!-- <a href="https://wa.me/2347034762934?text=Hello%20I%20want%20to%20order%20Silver%20Anklet%20for%20₦4000">
+        Order Now
+      </a>-->
+    </div>
+
+       
+       
+       
+       
 
   </div>
 </div>
